@@ -23,14 +23,14 @@ public class Task1 {
         public static void main(String[] args) {
 
             // Объявляем бегунов
-            Runner cat01 = new Cat ("Барсик", random.nextInt(10)+1, random.nextInt(10)+1);
-            Runner robot01 = new Robot("Валли", random.nextInt(10)+1, random.nextInt(10)+1);
-            Runner human1=new Human("Петр", random.nextInt(10)+1, random.nextInt(10)+1);
+            Runner cat = new Cat ("Барсик", random.nextInt(10)+1, random.nextInt(10)+1);
+            Runner robot = new Robot("Валли", random.nextInt(10)+1, random.nextInt(10)+1);
+            Runner human=new Human("Петр", random.nextInt(10)+1, random.nextInt(10)+1);
 
             Runner [] rivals =new Runner[3];
-            rivals [0] = robot01;
-            rivals [1] = cat01;
-            rivals [2] = human1;
+            rivals [0] = robot;
+            rivals [1] = cat;
+            rivals [2] = human;
 
             // Объявим препятствия
             Obstacle[] obstacles = {
@@ -78,11 +78,6 @@ public class Task1 {
         int getHeight();
     }
 
-    interface Runner {
-
-        boolean jumpAble (int distance);
-        boolean runAble (int length);
-    }
 
     /**
      * Беговая дорожка
@@ -129,7 +124,13 @@ public class Task1 {
 
     }
 
-    class Robot implements Runner {
+interface Runner {
+
+    boolean jumpAble (int distance);
+    boolean runAble (int length);
+}
+
+class Robot implements Runner {
 
         private String name;
         private int heigth;
