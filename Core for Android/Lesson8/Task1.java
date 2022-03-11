@@ -14,6 +14,8 @@ package Lesson8.Task1;
  * препятствий не идет.
  */
 
+
+
 import java.util.Random;
 
 public class Task1 {
