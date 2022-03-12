@@ -96,6 +96,16 @@ class SecondThread implements Runnable {
         t1.start();
         t2.start();
 
+        try {
+            t1.join();
+            t2.join();
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        t1.getArr();
+        t2.getArr();
+
         System.arraycopy (arr1, 0, arr, 0, half);
         System.arraycopy (arr2, 0, arr, half, half);
 
@@ -109,6 +119,10 @@ class MyThread extends Thread {
 
     public MyThread(float[] arr) {
         this.arr = arr;
+    }
+
+    public float[] getArr() {
+        return arr;
     }
 
     @Override
@@ -156,6 +170,20 @@ class ThirdMethod implements Runnable {
         t3.start();
         t4.start();
 
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+            t4.join();
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        t1.getArr();
+        t2.getArr();
+        t3.getArr();
+        t4.getArr();
+
         System.arraycopy (arr1, 0, arr, 0, quarter);
         System.arraycopy (arr2, 0, arr, quarter, quarter);
         System.arraycopy (arr3, 0, arr, quarter*2, quarter);
@@ -171,6 +199,10 @@ class MyThreadV2 extends Thread {
 
     public MyThreadV2(float[] arr) {
         this.arr = arr;
+    }
+
+    public float[] getArr() {
+        return arr;
     }
 
     @Override
