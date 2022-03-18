@@ -32,15 +32,4 @@ public class Task1Test {
 
         Assert.assertArrayEquals(arr3, arr3_1);
     }
-    /*@Test
-    @Ignore
-    public void newArray (){
-
-        int [] arrIn5 = new int [] {5,8,7,1,6,7,2,9};
-        int [] arr4 =Task1.newArray(arrIn5);
-        int [] arr4_1 =
-
-       Assert.assertArrayEquals(arr4, arr4_1);
-    }*/
-
 }
