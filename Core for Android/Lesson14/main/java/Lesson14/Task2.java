@@ -24,13 +24,10 @@ public class Task2 {
         int [] arr3 = new int[] { 4, 4, 4, 4};
         int [] arr4 = new int[] {1, 1, 1, 4, 3, 1, 4, 4};
 
-
         System.out.println(checkArray (arr1));
         System.out.println(checkArray (arr2));
         System.out.println(checkArray (arr3));
         System.out.println(checkArray (arr4));
-
-
     }
 
     public static boolean checkArray(int[] arr){
@@ -44,15 +41,5 @@ public class Task2 {
                 checkFour = true;
             } else return false;
         } return checkOne && checkFour;
-
-
-
-        /*for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 4 && arr[i] != 1){
-                return true;
-            } else return false;
-        }
-return false;*/
     }
-
 }
